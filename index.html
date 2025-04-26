@@ -3,14 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="./js/task-1.js" defer></script>
-        <script src="./js/task-2.js" defer></script>
+        <script src="./js/byt.js" defer></script>
+        <script src="./js/bytovy-dum.js" defer></script>
         <script src="./js/task-3.js" defer></script>
     <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css" />
 </head>
 <body>
-    <h1>Droids for sale</h1> 
-    <button>>>Order droids here<<</button>
+    <h1>Kalkulace správy</h1>
+    <div class="two-btn">
+        <button class="btn" onclick="showApartmentForm()">Byt</button>
+        <button class="btn" onclick="showHouseForm()">Bytový dům</button>
+    </div>
+
+    <div id="apartment-form" style="display: none;" class="modal-window">
+        <h2>Byt</h2>
+        <div class="modal-field">
+        <label class="form-items" for="district">Vyberte lokalitu:</label>
+        <select id="district">
+            <option value="Praha 1">Praha 1</option>
+            <option value="Praha 2">Praha 2</option>
+            <option value="Praha 3">Praha 3</option>
+            <option value="Praha 4">Praha 4</option>
+            <option value="Praha 5">Praha 5</option>
+            <option value="Praha 6">Praha 6</option>
+            <option value="Praha 7">Praha 7</option>
+            <option value="Praha 8">Praha 8</option>
+            <option value="Praha 9">Praha 9</option>
+            <option value="Praha 10">Praha 10</option>
+        </select>
+        <br>
+        <label class="form-items" for="disposition">Vyberte dispozici:</label>
+        <select id="disposition">
+            <option value="1+1">1+1</option>
+            <option value="1kk">1kk</option>
+            <option value="2+1">2+1</option>
+            <option value="2kk">2kk</option>
+            <option value="2+1">3+1</option>
+            <option value="2kk">3kk</option>
+            <option value="2+1">4+1</option>
+            <option value="2kk">4kk</option>
+            <option value="2kk">5 a vice</option>
+        </select>
+        <br>
+        <label class="form-items" for="size">Výměra (m²):</label>
+        <input class="apt-size" type="number" id="size">
+        <br>
+        <button class="count-btn" onclick="calculatePrice()">Spočítat</button>
+        <button class="close-btn" onclick="closeApartmentForm()">X</button>
+        <div class="result" id="result"></div>
+        </div>
+    </div>
+
+    <div id="house-form" style="display: none;" class="modal-window">
+        <h2>Bytový dům</h2>
+        <label class="form-items" for="usable-area">Užitná plocha domu (m²):</label>
+        <input class="apt-size" type="number" id="usable-area">
+        <br>
+        <label class="form-items" for="residential-units">Celkem bytových jednotek:</label>
+        <input class="apt-size" type="number" id="residential-units">
+        <br>
+        <label  class="form-items"for="nonresidential-units">Celkem nebytových jednotek:</label>
+        <input class="apt-size" type="number" id="nonresidential-units">
+        <br>
+        <button class="count-btn" onclick="calculateHouseManagementPrice()">Spočítat</button>
+        <button class="close-btn" onclick="closeHouseForm()">Zavřít</button>
+        <div class="result" id="result-house"></div>
+    </div>
+
 
 
 </body>
